@@ -335,6 +335,7 @@ section{
     padding: 5rem;
     text-align: center;
     border: var(--border);
+    overflow: hidden;
 }
 
 /* Like Button Code Starts */
@@ -365,7 +366,8 @@ section{
 /* Like Button Code Ends */
 .products .box-container .box img{
     height: 20rem;
-    width: 15rem;
+    width: 17rem;
+    object-fit:cover;
 }
 .products .box-container .box h3{
     color: #fff;
@@ -390,17 +392,18 @@ section{
     padding-bottom: 5rem;
     padding-top: 2rem;
     margin-right: 10px;
+    transition: font-size 0.60s ease;
 }
 .products .box-container .box span{
     color: #fff;
     font-size: 1.7rem;
     text-decoration: line-through;
 }
- .box-container .box:hover .price{
+.products .box-container .box:hover .price{
     font-size: 4rem;
 }
 
-.btn{
+.product-btn{
     font-size: 1.7rem;
     color: #fff;
     border-width: 1px;
@@ -410,7 +413,7 @@ section{
     transition: all .6s ease;
     margin-top: 4rem;
 }
-.btn:hover{
+.product-btn:hover{
     background: red;
     border-color: white;
     color: #fff;
@@ -470,9 +473,12 @@ section{
 /* REVIEW SECTION ENDS */
 
 /* CONTACT SECTION STARTS */
+.contact{
+    padding-top: 80px;
+}
 .contact .row{
     display: flex;
-    align-items: center;
+    align-items: stretch;
     background: var(--black);
     flex-wrap: wrap;
     gap: 1rem;
@@ -497,8 +503,9 @@ section{
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    background: var(--black);
+    background: var(--bg);
     border: var(--main-color);
+    border-style: solid;
 }
 .contact .row form .inputbox span{
     color: #fff;
@@ -513,8 +520,89 @@ section{
     text-transform: none;
     background: none;
 }
+.contact .row form .contact-btn{
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-width: 1px;
+    border-style: solid;
+    border-color: #fff;
+    padding: 1rem 1.5rem;
+    transition: all .6s ease;
+    margin-top: 4rem;
+}
+.contact .row form .contact-btn:hover{
+    background: var(--main-color);
+    border-color: white;
+    color: #fff;
+}
 
-/* CONTACT SECTION STARTS */
+/* CONTACT SECTION ENDS */
+
+/* BLOGS SECTION STARTS */
+
+.blogs{
+    padding: 4rem;
+    padding-top: 80px;
+}
+
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 5rem; 
+}
+
+.blogs .box-container .box {
+    display: flex;
+    border: 1px solid var(--main-color);
+    background: var(--black);
+}
+
+.blogs .box-container .box .image {
+    flex: 1;
+    object-fit: cover   ;
+}
+
+.blogs .box-container .box .image img {
+    width: 70%; 
+    height: auto;
+    
+}
+
+.blogs .box-container .box .content {
+    position: relative;
+    margin-top: 4rem;
+    flex: 1; 
+    padding: 1rem; 
+    margin-left: -100px;
+    margin-top: 1rem;
+}
+
+.blogs .box-container .box .content h3{
+    font-size: 2.6rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.blogs .box-container .box .content a{
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+    top: 0; right: 20px;
+}
+
+.blogs .box-container .box .content p{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.blogs .box-container .box:hover{
+    transform: scale(1.1);
+}
+
+
+/* BLOGS SECTION ENDS */
+
 
 
 
@@ -692,5 +780,53 @@ section{
         width: 50px;
         height: 60px;
         margin-bottom: 1.5rem;
+    }
+}
+
+/* BLOGS PAGE */
+@media (max-width: 1335px) {
+    .blogs .box-container{
+        display: block;
+        gap: 2rem;
+    } 
+    .blogs .box-container .box{
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+    .blogs .box-container content h3{
+        margin-left: -100px;
+    }
+    .blogs .box-container .box .content a{
+        display: none;
+    }
+    .blogs .box-container .box .image{
+        flex: 0.80;
+    }
+    .blogs .box-container .box .image img{
+        width: 50%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .blogs .box-container .box .content h3{
+        font-size: 2rem;
+    }
+    .blogs .box-container .box .content p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .blogs .box-container .box .image img{
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: 1rem;
+    }
+    .blogs .box-container .box .content h3{
+        font-size: 2rem;
+    }
+    .blogs .box-container .box .content p{
+        font-size: 1.5rem;
     }
 }
